@@ -1,9 +1,6 @@
-provider "aws" {
-    region = "us-east-1"
-    # access_key = "" DO not use
-    # secret_key = "" Do not use
-  
-}
+# provider "aws" {
+#     region = "us-east-1"
+# }
 
 
 # resource "aws_instance" "my-server" {
