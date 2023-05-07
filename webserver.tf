@@ -157,10 +157,12 @@ resource "aws_eip" "one" {
   depends_on = [aws_internet_gateway.gw]
     
 }
-# Create an ubntu server and install/enable apche2 server
+###############################################################################
+#                   Server
+###############################################################################
 
 resource "aws_instance" "web-server-instance" {
-    ami = "ami-08c40ec9ead489470"
+    ami = "ami-007cf291af489ad4d"
     instance_type = "t2.micro"
     availability_zone = "us-east-1a"
     key_name = "aws-key-test"
@@ -172,9 +174,7 @@ resource "aws_instance" "web-server-instance" {
 
     user_data = <<-EOF
                 #!bin/bash
-                sudo apt-get update && sudo apt-get upgrade -y
-                sudo apt install apache2 -y
-                sudo systemctl enable apache2
+                
                 EOF
     
     tags = {
